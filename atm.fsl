@@ -11,7 +11,7 @@ VerifyCard <- 'InsertCard'
 Ready; 
 
 // AcceptCard
-VerifyCard <= 'Insert'
+VerifyCard <= 'InsertCard'
 AcceptCard 'Cancel' -> Ready;
 
 // VerifyCard
