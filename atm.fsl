@@ -7,7 +7,7 @@ $Anything;
 AcceptCard <= 'TouchToBegin'
 Ready;
 
-AcceptCard <- 'InsertCard'
+VerifyCard <- 'InsertCard'
 Ready; 
 
 // AcceptCard
