@@ -1,7 +1,11 @@
-// $Anything
+// Any State (power)
 Ready <~ 'PowerOn'
-ShutDown <~ 'PowerOff'
-$Anything;
+OffNoCard <~ 'PowerOff'
+[Ready AcceptCard];
+
+EjectCard <~ 'PowerOn'
+OffHasCard <~ 'PowerOff'
+[VerifyCard EnterPIN EjectCard EnterAmount Dispense];
 
 // Ready
 AcceptCard <= 'TouchToBegin'
