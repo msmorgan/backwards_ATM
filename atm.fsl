@@ -32,7 +32,7 @@ VerifyPIN 'Failure' ~> EjectCard;
 // EnterAmount
 EjectCard <= 'TakeCash'
 Dispense <= 'Choice'
-EnterAmount 'Cancel' -> Ready;
+EnterAmount 'Cancel' -> EjectCard;
 
 // EjectCard
 Ready <= 'TakeCard'
