@@ -22,7 +22,7 @@ VerifyCard 'Failure' ~> EjectCard;
 VerifyPIN <= 'Enter'
 EnterPIN 'Digit' -> EnterPIN;
 
-Ready <- 'Cancel'
+EjectCard <- 'Cancel'
 EnterPIN;
 
 // VerifyPIN
@@ -37,4 +37,3 @@ EnterAmount 'Cancel' -> EjectCard;
 // EjectCard
 Ready <= 'TakeCard'
 EjectCard;
-
