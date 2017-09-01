@@ -1,0 +1,40 @@
+// $Anything
+Ready <~ 'PowerOn'
+ShutDown <~ 'PowerOff'
+$Anything;
+
+// Ready
+AcceptCard <= 'TouchToBegin'
+Ready;
+
+AcceptCard <- 'InsertCard'
+Ready; 
+
+// AcceptCard
+VerifyCard <= 'Insert'
+AcceptCard 'Cancel' -> Ready;
+
+// VerifyCard
+EnterPIN <= 'Success'
+VerifyCard 'Failure' ~> EjectCard;
+
+// EnterPIN
+VerifyPIN <= 'Enter'
+EnterPIN 'Digit' -> EnterPIN;
+
+Ready <- 'Cancel'
+EnterPIN;
+
+// VerifyPIN
+EnterAmount <= 'Success'
+VerifyPIN 'Failure' ~> EjectCard;
+
+// EnterAmount
+EjectCard <= 'TakeCash'
+Dispense <= 'Choice'
+EnterAmount 'Cancel' -> Ready;
+
+// EjectCard
+Ready <= 'TakeCard'
+EjectCard;
+
