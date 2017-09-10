@@ -1,3 +1,5 @@
+machine_name: "Backwards ATM";
+
 // Any State (power)
 Ready <~ 'PowerOn'
 OffNoCard <~ 'PowerOff'
